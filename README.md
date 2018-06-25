@@ -1,5 +1,7 @@
 # moment-business-days
-This is a [Moment.js](https://github.com/moment/moment/) plugin that allows you to work with only business days (Monday to Friday). You can customize business days, and also set custom dates for holidays to exclude them from business days, for example **national holidays**.
+This is a [Moment.js](https://github.com/moment/moment/) plugin that allows you to work with only business days
+(Monday to Friday). You can customize the working week, and also set custom dates for holidays to exclude them from
+being counted as business days, for example **national holidays**.
 
 ## Notes
 * This plugin works on both server and client side.
@@ -10,7 +12,7 @@ This is a [Moment.js](https://github.com/moment/moment/) plugin that allows you 
 ## Setup
 
 ````
-// For Node.js...
+// For Node.js
 $ npm install moment-business-days
 
 // ...or install and save in package.json
@@ -23,7 +25,7 @@ $ bower install moment-business-days
 ## Usage
 
 ````javascript
-// NodeJS
+// NodeJS: require instead of standard moment
 var moment = require('moment-business-days');
 // You'll be able use Moment.js as you normally do
 ````
@@ -68,7 +70,8 @@ moment.locale('us', {
 
 ## Documentation
 
-The objects returned by methods are **Moment.js** objects (except `.isBusinessDay()` and `.businessDiff()`) so you can handle them with **Moment.js** native methods.
+The objects returned by methods are **Moment.js** objects (except `.isBusinessDay()` and `.businessDiff()`) so you can
+handle them with **Moment.js** native methods.
 
 #### `.isBusinessDay()` => boolean
 
@@ -163,7 +166,10 @@ Is like `.monthBusinessDays()`, but this method will include the weekends in it'
 
 #### `.monthBusinessWeeks()` => Moment[][]
 
-Retrieve an array of arrays, these arrays are the representation of a business weeks and each week (array) have it own business days (Monday to Friday). There could be the case that one week (array) have less than 5 days, this is because the month started in the middle of a week, for example: the first week of January 2015 has just two days, Thursday 1st and Friday 2nd. **Each day in the week arrays are Moment.js objects.**
+Retrieve an array of arrays, these arrays are the representation of a business weeks and each week (array) have it own
+business days (Monday to Friday). There could be the case that one week (array) have less than 5 days, this is because
+the month started in the middle of a week, for example: the first week of January 2015 has just two days,
+Thursday 1st and Friday 2nd. **Each day in the week arrays are Moment.js objects.**
 
 ```javascript
 //Busines weeks in month January 2015
